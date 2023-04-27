@@ -1,2 +1,2 @@
 # quarkus-serverless-twillio
-Quarkus serverless with AWS Lambda example using Twilio provider to send SMS messages.
+Example how to use quarkus funqy serverless and twillio to send SMS to US phone numbers 

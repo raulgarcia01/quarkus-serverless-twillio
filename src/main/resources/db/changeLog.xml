@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="Raul Garcia">
+        <ext:createCollection collectionName="messages_base"/>
+
+        <ext:insertOne collectionName="messages_base">
+            <ext:document>{"templateName":"Summer Camp", "templateText": "Hi! [user_name] We’re excited to have you join us at summer camp this year! Don’t forget to pack your sunscreen and bug spray! See you soon!", type: "REG"}</ext:document>
+        </ext:insertOne>
+
+        <ext:insertOne collectionName="messages_base">
+            <ext:document>{"templateName":"Winter Camp", "templateText": "Hi! [user_name] We’re excited to have you join us at winter camp this year! Don’t forget to pack your warm clothes and boots! See you soon!", type: "REG"}</ext:document>
+        </ext:insertOne>
+
+        <ext:insertOne collectionName="messages_base">
+            <ext:document>{"templateName":"Important announcement", "templateText": "Congratulations [user_name] on your graduation from kindergarten! You’ve learned so much and grown so much this year. We’re so proud of you and can’t wait to see what you’ll accomplish next!", imageURL: "https://www.jameshillierfoundation.com/wp-content/themes/hillier2017/images/hatdiploma.png", type: "MUL"}</ext:document>
+        </ext:insertOne>
+
+        <ext:insertOne collectionName="messages_base">
+            <ext:document>{"templateName":"Get back to class", "templateText": "Hey there! [user_name] It’s time to get back to class! I hope you’re ready to learn and have some fun today!", imageURL: "https://campus.harmonytx.org/hsakaty-new/wp-content/uploads/sites/129/2020/08/Back-to-Class.jpg", type: "MUL"}</ext:document>
+        </ext:insertOne>
+    </changeSet>
+
+</databaseChangeLog>

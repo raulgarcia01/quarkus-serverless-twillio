@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "05f74a08-377d-493e-b1d5-3175bf253433",
+		"name": "Quarkus_Twillio_SMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1129991"
+	},
+	"item": [
+		{
+			"name": "simpleSMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"+18334890658\",\r\n    \"remittent\": \"+13233282603\",\r\n    \"message\": \"Simple SMS Message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/messages/freeStyleSMS",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"freeStyleSMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "multimediaSMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"+18334890658\",\r\n    \"remittent\": \"+13233282603\",\r\n    \"message\": \"Good SMS Message from Twillio\",\r\n    \"uriImage\": \"https://media.glassdoor.com/sqll/1290758/applaudo-studios-squarelogo-1574750414651.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/messages/freeStyleSMS",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"freeStyleSMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "templateSimpleSMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"+18334890658\",\r\n    \"remittent\": \"+13233282603\",\r\n    \"userName\": \"Raul Garcia\",\r\n    \"templateName\": \"Summer Camp\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/messages/templateStyleSMS",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"templateStyleSMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "templateMultimediaSMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"+18334890658\",\r\n    \"remittent\": \"+13233282603\",\r\n    \"userName\": \"Raul Garcia\",\r\n    \"templateName\": \"Important announcement\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/messages/templateStyleSMS",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"templateStyleSMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTemplates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lambda_url}}/api/templates",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTemplatesByType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lambda_url}}/api/templates?type=MULTIMEDIA",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "MULTIMEDIA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTemplatesByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lambda_url}}/api/templates?name=Important announcement",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Important announcement"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTemplate - Simple",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"templateName\": \"Happy birthday\",\r\n        \"templateText\": \"Happy birthday [user_name]! May your life ahead be filled with love, success, and happiness.\",\r\n        \"type\": \"REG\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/templates",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTemplate - Multimedia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"templateName\": \"Happy birthday\",\r\n        \"templateText\": \"Hey there! [user_name] It’s time to get back to class! I hope you’re ready to learn and have some fun today!\",\r\n        \"imageURL\": \"https://campus.harmonytx.org/hsakaty-new/wp-content/uploads/sites/129/2020/08/Back-to-Class.jpg\",\r\n        \"type\": \"MUL\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lambda_url}}/api/templates",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTemplate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{lambda_url}}/api/templates?id=6449bfc36ba5237baeb00911",
+					"host": [
+						"{{lambda_url}}"
+					],
+					"path": [
+						"api",
+						"templates"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6449bfc36ba5237baeb00911"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
